@@ -43,7 +43,7 @@ class TradingEnv(gym.Env):
         self.observation_space = spaces.Box(
             low=-np.inf,
             high=np.inf,
-            shape=(29,),
+            shape=(24,),
             dtype=np.float32
         )
         self.trade_count = 0
@@ -336,13 +336,29 @@ def train_ppo(env, hyperparams, total_episodes=1000):
 if __name__ == "__main__":
     df = pd.read_csv(r'D:\lgb_future2.csv').dropna()
     feature_columns = ['close', 'position', 'return_rate']
-    feature_columns = ['close', 'position', 'return_rate', '1min_prev', 'current_last_low_rate_15m', '30min_prev',
-                       'current_last_high_rate_15m', '5min_prev', '15min_prev', 'rsi1_diff_15m', 'rsi1_15m',
-                       '60min_prev',
-                       'current_high_rate_15m', 'current_low_rate_15m', 'bull_upper_current_rate_15m', 'vwap_rate',
-                       '24h_prev',
-                       'macd1_diff_15m', '1min_momentum', '2h_momentum', 'taker_buy_base_asset_volume', '12h_momentum',
-                       'taker_sell_base_asset_volume', 'current_high_rate_change_15m', 'adx1_15m', '3h_prev']
+    feature_columns = [
+        'close',
+        'position',
+        'return_rate',
+        'volume',
+        '1min_prev',
+        '5min_prev',
+        '15min_prev',
+        '30min_prev',
+        '60min_prev',
+        '3h_prev',
+        '8h_prev',
+        '24h_prev',
+        'current_high_rate_15m',
+        'current_low_rate_15m',
+        'macd1_15m',
+        'rsi1_15m',
+        'adx1_15m',
+        'sar1_15m',
+        'bull_upper_15m',
+        'bull_lower_15m',
+        'vwap'
+    ]
     env = TradingEnv(data=df[feature_columns], leverage=10)  # 降低杠杆至5倍 [[8]]
     hyperparams = {
         'lr': 5e-5,  # 降低学习率 [[9]]
