@@ -1,0 +1,139 @@
+// 1. 英雄表（champs）- 存储英雄基础信息
+Table champs {
+id string [pk, note: "英雄唯一ID（如1=安妮，516=奥恩）"]
+name string [note: "英雄名称（如Annie=安妮，Olaf=奥拉夫）"]
+}
+
+// 2. 比赛表（matches）- 核心枢纽表
+Table matches {
+id string [pk, note: '数据集内比赛唯一标识（关联其他表）']
+gameid string [note: "拳头游戏官方比赛ID"]
+platformid string [note: "服务器ID（如EUW1=欧洲西部，NA1=北美）"]
+queueid string [note: "队列类型ID（420=单排/双排，4=自定义）"]
+seasonid string [note: "赛季ID（如8=S8赛季）"]
+duration int [note: "比赛时长（单位：秒，如1909=31分49秒）"]
+creation string [note: "比赛开始时间戳（需转换为日期格式）"]
+version string [note: "游戏版本（如7.10.187.9675）"]
+}
+
+// 3. 参赛玩家表（participants）- 连接比赛、英雄、战绩
+Table participants {
+id string [pk, note: "每个玩家每场比赛的唯一记录ID"]
+matchid string [note: "关联matches表的id（对应具体比赛）"]
+player int [note: "比赛内玩家序号（1-10，对应10名玩家）"]
+championid string [note: "关联champs表的id（玩家选用的英雄）"]
+ss1 int [note: "召唤师技能1ID（如4=闪现）"]
+ss2 int [note: "召唤师技能2ID（如11=惩戒）"]
+role string [note: "团队角色（DUO_CARRY=ADC，DUO_SUPPORT=辅助，SOLO=单带）"]
+position string [note: "游戏位置（TOP=上单，MID=中单，JUNGLE=打野，BOT=下路）"]
+}
+
+// 4. 玩家战绩表1（stats1）- 分表1（完整48字段）
+Table stats1 {
+id string [pk, note: "关联participants表的id（对应玩家参赛记录）"]
+win int [note: "胜负标识（1=胜利，0=失败）"]
+item1 int [note: "装备1ID"]
+item2 int [note: "装备2ID"]
+item3 int [note: "装备3ID"]
+item4 int [note: "装备4ID"]
+item5 int [note: "装备5ID"]
+item6 int [note: "装备6ID"]
+trinket int [note: "饰品ID"]
+kills int [note: "玩家本场击杀次数"]
+deaths int [note: "玩家本场死亡次数"]
+assists int [note: "玩家本场助攻次数"]
+largestkillingspree int [note: "最大击杀连杀数"]
+largestmultikill int [note: "最大多杀数（双杀/三杀等）"]
+killingsprees int [note: "击杀连杀次数"]
+longesttimespentliving int [note: "最长存活时间（秒）"]
+doublekills int [note: "双杀次数"]
+triplekills int [note: "三杀次数"]
+quadrakills int [note: "四杀次数"]
+pentakills int [note: "五杀次数"]
+legendarykills int [note: "传奇击杀次数"]
+totdmgdealt int [note: "总伤害输出"]
+magicdmgdealt int [note: "魔法伤害输出"]
+physicaldmgdealt int [note: "物理伤害输出"]
+truedmgdealt int [note: "真实伤害输出"]
+largestcrit int [note: "最大暴击伤害"]
+totdmgtochamp int [note: "对英雄总伤害"]
+magicdmgtochamp int [note: "对英雄魔法伤害"]
+physdmgtochamp int [note: "对英雄物理伤害"]
+truedmgtochamp int [note: "对英雄真实伤害"]
+totheal int [note: "总治疗量"]
+totunitshealed int [note: "治疗单位总数"]
+dmgselfmit int [note: "自身减免伤害"]
+dmgtoobj int [note: "对目标总伤害"]
+dmgtoturrets int [note: "对防御塔伤害"]
+visionscore int [note: "视野得分"]
+timecc int [note: "控制时长（秒）"]
+totdmgtaken int [note: "总承受伤害"]
+magicdmgtaken int [note: "承受魔法伤害"]
+physdmgtaken int [note: "承受物理伤害"]
+truedmgtaken int [note: "承受真实伤害"]
+goldearned int [note: "总金币收入"]
+goldspent int [note: "总金币支出"]
+turretkills int [note: "摧毁防御塔数"]
+inhibkills int [note: "摧毁高地数"]
+totminionskilled int [note: "补兵总数"]
+neutralminionskilled int [note: "中性单位击杀数"]
+ownjunglekills int [note: "己方野区击杀数"]
+enemyjunglekills int [note: "敌方野区击杀数"]
+totcctimedealt int [note: "造成控制时长（秒）"]
+champlvl int [note: "英雄等级（1-18）"]
+pinksbought int [note: "购买真眼数"]
+wardsbought int [note: "购买眼数"]
+wardsplaced int [note: "放置眼数"]
+wardskilled int [note: "排眼数"]
+firstblood int [note: "一血标识（1=拿到一血，0=未拿到）"]
+}
+
+// 6. 团队ban英雄表（teambans）
+Table teambans {
+matchid string [pk, note: "关联matches表的id（对应具体比赛）"]
+teamid string [pk, note: "团队ID（100=红方，200=蓝方）"]
+championid string [note: "关联champs表的id（被禁用的英雄）"]
+banturn int [pk, note: "ban位顺序（1-6，双方各3个ban位）"]
+}
+
+// 7. 团队战绩表（teamstats）
+Table teamstats {
+matchid string [pk, note: "关联matches表的id（对应具体比赛）"]
+teamid string [pk, note: "团队ID（100=红方，200=蓝方）"]
+firstblood int [note: "一血归属（1=该团队拿到，0=未拿到）"]
+firsttower int [note: "首塔归属（1=该团队拿到，0=未拿到）"]
+firstinhib int [note: "首高地归属（1=该团队摧毁，0=未摧毁）"]
+firstbaron int [note: "首大龙归属（1=该团队击杀，0=未击杀）"]
+firstdragon int [note: "首小龙归属（1=该团队击杀，0=未击杀）"]
+firstharry int [note: "首峡谷先锋归属（1=该团队击杀，0=未击杀）"]
+towerkills int [note: "团队总推塔数"]
+inhibkills int [note: "团队总破高地数"]
+baronkills int [note: "团队大龙击杀数"]
+dragonkills int [note: "团队小龙击杀数"]
+harrykills int [note: "团队峡谷先锋击杀数"]
+}
+
+// ------------------------------
+// 表间关联关系（移除 label 关键字，仅保留核心关联）
+// ------------------------------
+// 比赛 ↔ 参赛玩家（1场比赛 → 10个玩家）
+Ref: matches.id < participants.matchid
+
+// 参赛玩家 ↔ 英雄（1个英雄 → 多个玩家选用）
+Ref: champs.id < participants.championid
+
+// 参赛玩家 ↔ 战绩表1（1条参赛记录 → 1条战绩）
+Ref: participants.id < stats1.id
+
+// 比赛 ↔ 团队ban英雄（1场比赛 → 6条ban记录）
+Ref: matches.id < teambans.matchid
+
+// 团队ban英雄 ↔ 英雄（1个英雄 → 多次禁用）
+Ref: champs.id < teambans.championid
+
+// 比赛 ↔ 团队战绩（1场比赛 → 2条团队战绩）
+Ref: matches.id < teamstats.matchid
+
+Ref: teambans.matchid < teamstats.matchid
+
+Ref: teambans.teamid < teamstats.teamid

@@ -1,0 +1,55 @@
+id,name,cn_name,type,key
+1,B.F. Sword,暴风大剑,散件,基础物理类散件
+2,Recurve Bow,反曲之弓,散件,基础攻速类散件
+3,Needlessly Large Rod,无用大棒,散件,基础法强类散件
+4,Tear of the Goddess,女神之泪,散件,基础CD/回蓝类散件
+5,Chain Vest,锁子甲,散件,基础物防类散件
+6,Negatron Cloak,负极斗篷,散件,基础法抗类散件
+7,Giant's Belt,巨人腰带,散件,基础防御续航散件
+8,Spatula,金铲铲,散件,特殊散件
+9,Sparring Gloves,拳套,散件,基础暴击类散件
+11,Deathblade,死亡之刃,成装,物理输出
+12,Giant Slayer,巨人杀手,成装,物理输出
+13,Hextech Gunblade,海克斯科技枪刃,成装,法强+全能吸血
+14,Spear of Shojin,朔极之矛,成装,CD/回蓝
+15,Guardian Angel,守护天使,成装,保命/复活
+16,Bloodthirster,饮血剑,成装,物理吸血
+17,Zeke's Herald,基克的先驱,成装,功能辅助
+18,Blade of the Ruined King,破败王者之刃,成装,普攻特效
+19,Infinity Edge,无尽之刃,成装,暴击
+22,Rapid Firecannon,疾射火炮,成装,攻速+攻击距离
+23,Guinsoo's Rageblade,鬼索的狂暴之刃,成装,叠攻速
+24,Statikk Shiv,斯塔缇克电刃,成装,普攻特效
+25,Titan's Resolve,泰坦的坚决,成装,物防+输出
+26,Runaan's Hurricane,卢安娜的飓风,成装,攻速+分裂
+27,Zz'Rot Portal,兹若特传送门,成装,召唤特效
+28,Infiltrator's Talons,刺客之爪,转职,刺客转职
+29,Last Whisper,最后的轻语,成装,物穿
+33,Rabadon's Deathcap,灭世者的死亡之帽,成装,法强
+34,Luden's Echo,卢登的回声,成装,法强+爆发
+35,Locket of the Iron Solari,钢铁烈阳之匣,成装,法抗+团队护盾
+36,Ionic Spark,离子火花,成装,法穿+法术反制
+37,Morellonomicon,莫雷洛秘典,成装,法穿+灼烧
+38,Demolitionist's Charge,爆破专家的电荷,转职,爆破专家转职
+39,Jeweled Gauntlet,珠光护手,成装,法爆
+44,Seraph's Embrace,炽天使之拥,成装,CD/回蓝+法强
+45,Frozen Heart,冰霜之心,成装,功能+物防
+46,Chalice of Favor,恩泽圣杯,成装,CD/回蓝+辅助
+47,Redemption,救赎,成装,团队治疗
+48,Star Guardian's Charm,星之守护者的符咒,转职,星之守护者转职
+49,Hand Of Justice,正义之手,成装,全能特效
+55,Bramble Vest,棘刺背心,成装,物防+反伤
+56,Sword Breaker,破刃者,成装,功能控制
+57,Red Buff,红霸符,成装,普攻特效
+58,Rebel Medal,叛逆者勋章,转职,叛逆者转职
+59,Shroud of Stillness,静止法衣,成装,功能控蓝
+66,Dragon's Claw,巨龙之爪,成装,法抗
+67,Zephyr,凌风,成装,功能控制
+68,Celestial Orb,天神法球,成装,自身治疗
+69,Quicksilver,水银,成装,保命免控
+77,Warmog's Armor,狂徒铠甲,成装,物防+续航
+78,Protector's Chestguard,守护者胸甲,转职,守护者转职
+79,Trap Claw,伏击之爪,成装,保命反制
+88,Force of Nature,自然之力,成装,特殊功能
+89,Dark Star's Heart,暗星之心,转职,暗星转职
+99,Thief's Gloves,窃贼手套,成装,特殊特效

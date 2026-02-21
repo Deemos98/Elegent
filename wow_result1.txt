@@ -1,0 +1,172 @@
+===== 开始读取ORC文件 =====
+成功读取文件：locatc
+成功读取文件：locat
+成功读取文件：wowah
+成功读取文件：zone
+
+=== 1. 所有ORC文件数据基本信息 ===
+locatc - 总行数：3809
+locat - 总行数：151
+wowah - 总行数：10826734
+zone - 总行数：160
+
+=== 2. 所有ORC文件字段结构与数据预览 ===
+
+--------------------------------------------------
+文件名称：locatc
+--------------------------------------------------
+【字段结构（列名+数据类型）】
+root
+ |-- Location_Name: string (nullable = true)
+ |-- Map_ID: string (nullable = true)
+ |-- X_coord: string (nullable = true)
+ |-- Y_coord: string (nullable = true)
+ |-- Z_coord: string (nullable = true)
+
+
+【前5行数据】
++--------------------+------+-------------+-----------+----------+
+|       Location_Name|Map_ID|      X_coord|    Y_coord|   Z_coord|
++--------------------+------+-------------+-----------+----------+
+|Eastern Kingdom: ...|     0|-4488.9933105|-1580.19104|509.005066|
+|Eastern Kingdom: ...|     0|        -3855|      -3479|       579|
+|Eastern Kingdom: ...|     0|        -6161|       -786|       423|
+|Eastern Kingdom: ...|     0|      1831.26|     238.53|     60.52|
+|Eastern Kingdom: ...|     0|     -8913.23|    554.633|   93.7944|
++--------------------+------+-------------+-----------+----------+
+only showing top 5 rows
+
+
+【后5行数据】
++--------------------+------+--------+--------+-------+
+|       Location_Name|Map_ID| X_coord| Y_coord|Z_coord|
++--------------------+------+--------+--------+-------+
+|Terokkar Forest/A...|   530| -2995.4| 3873.27|9.72478|
+|Hellfire Peninsul...|   530| -323.81| 1027.61|54.2399|
+|Shadowmoon Valley...|   530|-3980.97| 2156.29|105.333|
+|Blade's Edge Moun...|   530| 1860.73| 5528.27|276.838|
+|Azshara: Talrendi...|     1| 2718.18|-3880.75|101.641|
++--------------------+------+--------+--------+-------+
+
+
+--------------------------------------------------
+文件名称：locat
+--------------------------------------------------
+【字段结构（列名+数据类型）】
+root
+ |-- Map_ID: string (nullable = true)
+ |-- Location_Type: string (nullable = true)
+ |-- Location_Name: string (nullable = true)
+ |-- Game_Version: string (nullable = true)
+
+
+【前5行数据】
++------+-------------+----------------+------------+
+|Map_ID|Location_Type|   Location_Name|Game_Version|
++------+-------------+----------------+------------+
+|     0|    Continent|Eastern Kingdoms|         WoW|
+|     1|    Continent|        Kalimdor|         WoW|
+|   530|    Continent|        Outlands|         TBC|
+|   571|    Continent|       Northrend|         WLK|
+|   646|    Continent|        Deepholm|         CAT|
++------+-------------+----------------+------------+
+only showing top 5 rows
+
+
+【后5行数据】
++------+-------------+--------------------+------------+
+|Map_ID|Location_Type|       Location_Name|Game_Version|
++------+-------------+--------------------+------------+
+|  1279|      Dungeon|The Everbloom<U+0...|         WoD|
+|  1358|      Dungeon|Upper Blackrock S...|         WoD|
+|  1228|         Raid|    Highmaul<U+00A0>|         WoD|
+|  1205|         Raid|Blackrock Foundry...|         WoD|
+|  1448|         Raid|Hellfire Citadel<...|         WoD|
++------+-------------+--------------------+------------+
+
+
+--------------------------------------------------
+文件名称：wowah
+--------------------------------------------------
+【字段结构（列名+数据类型）】
+root
+ |-- char: string (nullable = true)
+ |-- level: string (nullable = true)
+ |-- race: string (nullable = true)
+ |-- charclass: string (nullable = true)
+ |-- zone: string (nullable = true)
+ |-- guild: string (nullable = true)
+ |-- timestamp: string (nullable = true)
+
+
+【前5行数据】
++-----+-----+----+---------+------------------+-----+-----------------+
+| char|level|race|charclass|              zone|guild|        timestamp|
++-----+-----+----+---------+------------------+-----+-----------------+
+|59425|    1| Orc|    Rogue|         Orgrimmar|  165|01/01/08 00:02:04|
+|65494|    9| Orc|   Hunter|           Durotar|   -1|01/01/08 00:02:04|
+|65325|   14| Orc|  Warrior|        Ghostlands|   -1|01/01/08 00:02:04|
+|65490|   18| Orc|   Hunter|        Ghostlands|   -1|01/01/08 00:02:04|
+| 2288|   60| Orc|   Hunter|Hellfire Peninsula|   -1|01/01/08 00:02:09|
++-----+-----+----+---------+------------------+-----+-----------------+
+only showing top 5 rows
+
+
+【后5行数据】
++-----+-----+---------+------------+------------------+-----+-----------------+
+| char|level|     race|   charclass|              zone|guild|        timestamp|
++-----+-----+---------+------------+------------------+-----+-----------------+
+|86766|   80|Blood Elf|Death Knight|Halls of Lightning|  101|12/31/08 23:50:18|
+|86497|   77|Blood Elf|Death Knight|   The Storm Peaks|  358|12/31/08 23:50:18|
+|34893|   80|Blood Elf|Death Knight|   The Storm Peaks|  189|12/31/08 23:50:18|
+|86881|   80|Blood Elf|Death Knight|      Dragonblight|  478|12/31/08 23:50:18|
+|86457|   80|Blood Elf|Death Knight|      Dragonblight|  204|12/31/08 23:50:18|
++-----+-----+---------+------------+------------------+-----+-----------------+
+
+
+--------------------------------------------------
+文件名称：zone
+--------------------------------------------------
+【字段结构（列名+数据类型）】
+root
+ |-- Zone_Name: string (nullable = true)
+ |-- Continent: string (nullable = true)
+ |-- Area: string (nullable = true)
+ |-- Zone: string (nullable = true)
+ |-- Subzone: string (nullable = true)
+ |-- Type: string (nullable = true)
+ |-- Size: string (nullable = true)
+ |-- Controlled: string (nullable = true)
+ |-- Min_req_level: string (nullable = true)
+ |-- Min_rec_level: string (nullable = true)
+ |-- Max_rec_level: string (nullable = true)
+ |-- Min_bot_level: string (nullable = true)
+ |-- Max_bot_level: string (nullable = true)
+
+
+【前5行数据】
++--------------------+----------------+----------------+--------------------+-------+----+----+----------+-------------+-------------+-------------+-------------+-------------+
+|           Zone_Name|       Continent|            Area|                Zone|Subzone|Type|Size|Controlled|Min_req_level|Min_rec_level|Max_rec_level|Min_bot_level|Max_bot_level|
++--------------------+----------------+----------------+--------------------+-------+----+----+----------+-------------+-------------+-------------+-------------+-------------+
+|             Durotar|        Kalimdor|Central Kalimdor|             Durotar|       |Zone|  NA|     Horde|            1|            1|           10|            1|           10|
+|         The Barrens|        Kalimdor|Central Kalimdor|         The Barrens|       |Zone|  NA| Contested|            1|           10|           35|           10|           35|
+|   Silverpine Forest|Eastern Kingdoms|       Lordaeron|   Silverpine Forest|       |Zone|  NA|     Horde|            1|           10|           20|           10|           20|
+|Stonetalon Mountains|        Kalimdor|Central Kalimdor|Stonetalon Mountains|       |Zone|  NA| Contested|            1|           25|           30|           25|           30|
+|       Thunder Bluff|        Kalimdor|Central Kalimdor|       Thunder Bluff|       |City|  NA|     Horde|            1|            1|          100|            1|          100|
++--------------------+----------------+----------------+--------------------+-------+----+----+----------+-------------+-------------+-------------+-------------+-------------+
+only showing top 5 rows
+
+
+【后5行数据】
++--------------------+----------------+---------+---------------+--------------------+-------+----+----------+-------------+-------------+-------------+-------------+-------------+
+|           Zone_Name|       Continent|     Area|           Zone|             Subzone|   Type|Size|Controlled|Min_req_level|Min_rec_level|Max_rec_level|Min_bot_level|Max_bot_level|
++--------------------+----------------+---------+---------------+--------------------+-------+----+----------+-------------+-------------+-------------+-------------+-------------+
+|   Vault of Archavon|       Northrend|Northrend|    Wintergrasp|Wintergrasp Fortress|Dungeon|  25| Contested|           80|           80|           80|           80|           80|
+| The Eye of Eternity|       Northrend|Northrend|  Borean Tundra|            Coldarra|Dungeon|  25| Contested|           80|           80|           80|           80|           80|
+|The Obsidian Sanctum|       Northrend|Northrend|   Dragonblight|  Chamber of Aspects|Dungeon|  25| Contested|           80|           80|           80|           80|           80|
+|<U+9F8D><U+9AA8><...|       Northrend|Northrend|   Dragonblight|        Dragonblight|   Zone|  NA| Contested|            1|           72|           75|           72|           75|
+|<U+5317><U+65B9><...|Eastern Kingdoms|Lordaeron|Tirisfal Glades|         North Coast|   Zone|  NA| Contested|            1|            1|          100|            1|          100|
++--------------------+----------------+---------+---------------+--------------------+-------+----+----------+-------------+-------------+-------------+-------------+-------------+
+
+
+===== 分析完成，结果已写入：/opt/project/pubg_result1.txt =====

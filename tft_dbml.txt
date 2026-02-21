@@ -1,0 +1,13 @@
+// --- 挑战者段位数据 (Challenger) ---
+Table challenge {
+  gameId string [pk, note: "对局唯一ID"]
+  gameDuration double [note: "对局总时长(秒)"]
+  level long [note: "玩家最终人口等级 (通常4-9)"]
+  lastRound long [note: "玩家撑到的最后回合数"]
+  Ranked long [note: "本局排名 (1-8)"]
+  ingameDuration double [note: "玩家单局存活时长(秒)"]
+  combination string [note: "羁绊JSON字符串: {'Trait': Count}"]
+  champion string [note: "英雄JSON字符串: {'Champ': {'items': [], 'star': n}}"]
+  tier string [note: "段位"]
+}
+

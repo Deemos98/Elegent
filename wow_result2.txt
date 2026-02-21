@@ -1,0 +1,273 @@
+===== 开始读取ORC文件 =====
+成功读取文件：locatc
+成功读取文件：locat
+成功读取文件：wowah
+成功读取文件：zone
+
+=== 1. 所有ORC文件数据基本信息 ===
+locatc - 总行数：3809
+locat - 总行数：151
+wowah - 总行数：10826734
+zone - 总行数：160
+
+=== 2. 所有ORC文件字段结构与数据预览 ===
+
+--------------------------------------------------
+文件名称：locatc
+--------------------------------------------------
+【字段结构（列名+数据类型）】
+root
+ |-- Location_Name: string (nullable = true)
+ |-- Map_ID: string (nullable = true)
+ |-- X_coord: double (nullable = true)
+ |-- Y_coord: double (nullable = true)
+ |-- Z_coord: double (nullable = true)
+
+
+【前5行数据】
++--------------------+------+-------------+-----------+----------+
+|       Location_Name|Map_ID|      X_coord|    Y_coord|   Z_coord|
++--------------------+------+-------------+-----------+----------+
+|Eastern Kingdom: ...|     0|-4488.9933105|-1580.19104|509.005066|
+|Eastern Kingdom: ...|     0|      -3855.0|    -3479.0|     579.0|
+|Eastern Kingdom: ...|     0|      -6161.0|     -786.0|     423.0|
+|Eastern Kingdom: ...|     0|      1831.26|     238.53|     60.52|
+|Eastern Kingdom: ...|     0|     -8913.23|    554.633|   93.7944|
++--------------------+------+-------------+-----------+----------+
+only showing top 5 rows
+
+
+【后5行数据】
++--------------------+------+--------+--------+-------+
+|       Location_Name|Map_ID| X_coord| Y_coord|Z_coord|
++--------------------+------+--------+--------+-------+
+|Terokkar Forest/A...|   530| -2995.4| 3873.27|9.72478|
+|Hellfire Peninsul...|   530| -323.81| 1027.61|54.2399|
+|Shadowmoon Valley...|   530|-3980.97| 2156.29|105.333|
+|Blade's Edge Moun...|   530| 1860.73| 5528.27|276.838|
+|Azshara: Talrendi...|     1| 2718.18|-3880.75|101.641|
++--------------------+------+--------+--------+-------+
+
+
+--------------------------------------------------
+文件名称：locat
+--------------------------------------------------
+【字段结构（列名+数据类型）】
+root
+ |-- Map_ID: string (nullable = true)
+ |-- Location_Type: string (nullable = true)
+ |-- Location_Name: string (nullable = true)
+ |-- Game_Version: string (nullable = true)
+
+
+【前5行数据】
++------+-------------+----------------+------------+
+|Map_ID|Location_Type|   Location_Name|Game_Version|
++------+-------------+----------------+------------+
+|     0|    Continent|Eastern Kingdoms|         WoW|
+|     1|    Continent|        Kalimdor|         WoW|
+|   530|    Continent|        Outlands|         TBC|
+|   571|    Continent|       Northrend|         WLK|
+|   646|    Continent|        Deepholm|         CAT|
++------+-------------+----------------+------------+
+only showing top 5 rows
+
+
+【后5行数据】
++------+-------------+--------------------+------------+
+|Map_ID|Location_Type|       Location_Name|Game_Version|
++------+-------------+--------------------+------------+
+|  1279|      Dungeon|The Everbloom<U+0...|         WoD|
+|  1358|      Dungeon|Upper Blackrock S...|         WoD|
+|  1228|         Raid|    Highmaul<U+00A0>|         WoD|
+|  1205|         Raid|Blackrock Foundry...|         WoD|
+|  1448|         Raid|Hellfire Citadel<...|         WoD|
++------+-------------+--------------------+------------+
+
+
+--------------------------------------------------
+文件名称：wowah
+--------------------------------------------------
+【字段结构（列名+数据类型）】
+root
+ |-- char_id: string (nullable = true)
+ |-- level: long (nullable = true)
+ |-- race: string (nullable = true)
+ |-- charclass: string (nullable = true)
+ |-- zone: string (nullable = true)
+ |-- guild: long (nullable = true)
+ |-- timestamp: string (nullable = true)
+
+
+【前5行数据】
++-------+-----+----+---------+------------------+-----+-------------------+
+|char_id|level|race|charclass|              zone|guild|          timestamp|
++-------+-----+----+---------+------------------+-----+-------------------+
+|  59425|    1| Orc|    Rogue|         Orgrimmar|  165|2008-01-01 00:02:04|
+|  65494|    9| Orc|   Hunter|           Durotar|   -1|2008-01-01 00:02:04|
+|  65325|   14| Orc|  Warrior|        Ghostlands|   -1|2008-01-01 00:02:04|
+|  65490|   18| Orc|   Hunter|        Ghostlands|   -1|2008-01-01 00:02:04|
+|   2288|   60| Orc|   Hunter|Hellfire Peninsula|   -1|2008-01-01 00:02:09|
++-------+-----+----+---------+------------------+-----+-------------------+
+only showing top 5 rows
+
+
+【后5行数据】
++-------+-----+---------+------------+------------------+-----+-------------------+
+|char_id|level|     race|   charclass|              zone|guild|          timestamp|
++-------+-----+---------+------------+------------------+-----+-------------------+
+|  86766|   80|Blood Elf|Death Knight|Halls of Lightning|  101|2008-12-31 23:50:18|
+|  86497|   77|Blood Elf|Death Knight|   The Storm Peaks|  358|2008-12-31 23:50:18|
+|  34893|   80|Blood Elf|Death Knight|   The Storm Peaks|  189|2008-12-31 23:50:18|
+|  86881|   80|Blood Elf|Death Knight|      Dragonblight|  478|2008-12-31 23:50:18|
+|  86457|   80|Blood Elf|Death Knight|      Dragonblight|  204|2008-12-31 23:50:18|
++-------+-----+---------+------------+------------------+-----+-------------------+
+
+
+--------------------------------------------------
+文件名称：zone
+--------------------------------------------------
+【字段结构（列名+数据类型）】
+root
+ |-- Zone_Name: string (nullable = true)
+ |-- Continent: string (nullable = true)
+ |-- Area: string (nullable = true)
+ |-- Zone: string (nullable = true)
+ |-- Subzone: string (nullable = true)
+ |-- Type: string (nullable = true)
+ |-- Size: string (nullable = true)
+ |-- Controlled: string (nullable = true)
+ |-- Min_req_level: long (nullable = true)
+ |-- Min_rec_level: long (nullable = true)
+ |-- Max_rec_level: long (nullable = true)
+ |-- Min_bot_level: long (nullable = true)
+ |-- Max_bot_level: long (nullable = true)
+
+
+【前5行数据】
++--------------------+----------------+----------------+--------------------+-------+----+----+----------+-------------+-------------+-------------+-------------+-------------+
+|           Zone_Name|       Continent|            Area|                Zone|Subzone|Type|Size|Controlled|Min_req_level|Min_rec_level|Max_rec_level|Min_bot_level|Max_bot_level|
++--------------------+----------------+----------------+--------------------+-------+----+----+----------+-------------+-------------+-------------+-------------+-------------+
+|             Durotar|        Kalimdor|Central Kalimdor|             Durotar|       |Zone|  NA|     Horde|            1|            1|           10|            1|           10|
+|         The Barrens|        Kalimdor|Central Kalimdor|         The Barrens|       |Zone|  NA| Contested|            1|           10|           35|           10|           35|
+|   Silverpine Forest|Eastern Kingdoms|       Lordaeron|   Silverpine Forest|       |Zone|  NA|     Horde|            1|           10|           20|           10|           20|
+|Stonetalon Mountains|        Kalimdor|Central Kalimdor|Stonetalon Mountains|       |Zone|  NA| Contested|            1|           25|           30|           25|           30|
+|       Thunder Bluff|        Kalimdor|Central Kalimdor|       Thunder Bluff|       |City|  NA|     Horde|            1|            1|          100|            1|          100|
++--------------------+----------------+----------------+--------------------+-------+----+----+----------+-------------+-------------+-------------+-------------+-------------+
+only showing top 5 rows
+
+
+【后5行数据】
++--------------------+----------------+---------+---------------+--------------------+-------+----+----------+-------------+-------------+-------------+-------------+-------------+
+|           Zone_Name|       Continent|     Area|           Zone|             Subzone|   Type|Size|Controlled|Min_req_level|Min_rec_level|Max_rec_level|Min_bot_level|Max_bot_level|
++--------------------+----------------+---------+---------------+--------------------+-------+----+----------+-------------+-------------+-------------+-------------+-------------+
+|   Vault of Archavon|       Northrend|Northrend|    Wintergrasp|Wintergrasp Fortress|Dungeon|  25| Contested|           80|           80|           80|           80|           80|
+| The Eye of Eternity|       Northrend|Northrend|  Borean Tundra|            Coldarra|Dungeon|  25| Contested|           80|           80|           80|           80|           80|
+|The Obsidian Sanctum|       Northrend|Northrend|   Dragonblight|  Chamber of Aspects|Dungeon|  25| Contested|           80|           80|           80|           80|           80|
+|<U+9F8D><U+9AA8><...|       Northrend|Northrend|   Dragonblight|        Dragonblight|   Zone|  NA| Contested|            1|           72|           75|           72|           75|
+|<U+5317><U+65B9><...|Eastern Kingdoms|Lordaeron|Tirisfal Glades|         North Coast|   Zone|  NA| Contested|            1|            1|          100|            1|          100|
++--------------------+----------------+---------+---------------+--------------------+-------+----+----------+-------------+-------------+-------------+-------------+-------------+
+
+
+=== 3. 满级团本职业占比分析职业平衡 ===
++------------+----------+----------+----------+----------+----------------+
+|   charclass|dung_count|dung_ratio|lv80_count|lv80_ratio|dung_ratio_ratio|
++------------+----------+----------+----------+----------+----------------+
+|     Warrior|       104|    0.1234|       106|    0.1199|          1.0292|
+|        Mage|       102|     0.121|       104|    0.1176|          1.0289|
+|      Hunter|        93|    0.1103|        96|    0.1086|          1.0157|
+|      Shaman|        49|    0.0581|        51|    0.0577|          1.0069|
+|      Priest|        92|    0.1091|        96|    0.1086|          1.0046|
+|Death Knight|       134|     0.159|       141|    0.1595|          0.9969|
+|       Rogue|        51|    0.0605|        54|    0.0611|          0.9902|
+|     Paladin|        72|    0.0854|        77|    0.0871|          0.9805|
+|       Druid|        66|    0.0783|        71|    0.0803|          0.9751|
+|     Warlock|        80|    0.0949|        88|    0.0995|          0.9538|
++------------+----------+----------+----------+----------+----------------+
+
+
+=== 4. 有无公会对角色练度关系（加入公会是否能快速练级减少流失） ===
++------+----------+----------+----------+
+|lv_bin|guild_flag|char_count|char_ratio|
++------+----------+----------+----------+
+| 01-10|    无公会|     19338|    0.8747|
+| 01-10|    有公会|      2770|    0.1253|
+| 11-29|    无公会|      3861|    0.7034|
+| 11-29|    有公会|      1628|    0.2966|
+| 30-57|    无公会|      1597|    0.5524|
+| 30-57|    有公会|      1294|    0.4476|
+| 58-67|    无公会|      1071|     0.505|
+| 58-67|    有公会|      1050|     0.495|
+| 68-79|    无公会|       866|    0.2242|
+| 68-79|    有公会|      2996|    0.7758|
+|    80|    无公会|        64|    0.0725|
+|    80|    有公会|       819|    0.9275|
++------+----------+----------+----------+
+
+
+=== 5. 200801-200811期间各职业处于不同练度等级的流失比例最大 ===
++------------+------+----------+---------------+---------------+
+|   charclass|lv_bin|char_count|lv_change_count|lv_change_ratio|
++------------+------+----------+---------------+---------------+
+|Death Knight| 30-57|       583|            310|         0.5317|
+|Death Knight| 58-67|       783|            178|         0.2273|
+|Death Knight| 68-79|       195|              3|         0.0154|
+|Death Knight|    80|       140|              0|            0.0|
+|       Druid| 01-10|       841|            729|         0.8668|
+|       Druid| 11-29|       411|            338|         0.8224|
+|       Druid| 30-57|       183|            121|         0.6612|
+|       Druid| 58-67|        84|             51|         0.6071|
+|       Druid| 68-79|       290|            144|         0.4966|
+|       Druid|    80|        71|              0|            0.0|
+|      Hunter| 01-10|      2669|           2372|         0.8887|
+|      Hunter| 11-29|       835|            645|         0.7725|
+|      Hunter| 30-57|       418|            296|         0.7081|
+|      Hunter| 58-67|       254|            194|         0.7638|
+|      Hunter| 68-79|       583|            266|         0.4563|
+|      Hunter|    80|        96|              0|            0.0|
+|        Mage| 01-10|      2189|           1906|         0.8707|
+|        Mage| 11-29|       772|            631|         0.8174|
+|        Mage| 30-57|       301|            206|         0.6844|
+|        Mage| 58-67|       161|            114|         0.7081|
+|        Mage| 68-79|       543|            262|         0.4825|
+|        Mage|    80|       104|              0|            0.0|
+|     Paladin| 01-10|      1764|           1497|         0.8486|
+|     Paladin| 11-29|       644|            528|         0.8199|
+|     Paladin| 30-57|       214|            129|         0.6028|
+|     Paladin| 58-67|        66|             37|         0.5606|
+|     Paladin| 68-79|       336|            156|         0.4643|
+|     Paladin|    80|        77|              0|            0.0|
+|      Priest| 01-10|      1365|           1189|         0.8711|
+|      Priest| 11-29|       485|            383|         0.7897|
+|      Priest| 30-57|       199|            146|         0.7337|
+|      Priest| 58-67|       126|             95|          0.754|
+|      Priest| 68-79|       404|            190|         0.4703|
+|      Priest|    80|        96|              0|            0.0|
+|       Rogue| 01-10|      3097|           2777|         0.8967|
+|       Rogue| 11-29|       704|            603|         0.8565|
+|       Rogue| 30-57|       270|            203|         0.7519|
+|       Rogue| 58-67|       153|            115|         0.7516|
+|       Rogue| 68-79|       380|            190|            0.5|
+|       Rogue|    80|        54|              0|            0.0|
+|      Shaman| 01-10|      2027|           1799|         0.8875|
+|      Shaman| 11-29|       342|            279|         0.8158|
+|      Shaman| 30-57|       168|            129|         0.7679|
+|      Shaman| 58-67|       125|             88|          0.704|
+|      Shaman| 68-79|       264|            132|            0.5|
+|      Shaman|    80|        51|              0|            0.0|
+|     Warlock| 01-10|      2066|           1818|           0.88|
+|     Warlock| 11-29|       809|            669|         0.8269|
+|     Warlock| 30-57|       337|            245|          0.727|
+|     Warlock| 58-67|       160|            118|         0.7375|
+|     Warlock| 68-79|       447|            194|          0.434|
+|     Warlock|    80|        88|              0|            0.0|
+|     Warrior| 01-10|      6090|           5544|         0.9103|
+|     Warrior| 11-29|       487|            420|         0.8624|
+|     Warrior| 30-57|       218|            151|         0.6927|
+|     Warrior| 58-67|       209|            152|         0.7273|
+|     Warrior| 68-79|       420|            247|         0.5881|
+|     Warrior|    80|       106|              0|            0.0|
++------------+------+----------+---------------+---------------+
+
+
+===== 分析完成，结果已写入：/opt/project/wow_result2.txt =====

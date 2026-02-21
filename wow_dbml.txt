@@ -1,0 +1,49 @@
+// 位置坐标表（游戏内具体坐标点）
+Table locat_c {
+  Location_Name string [note: "位置名称（含大陆/区域）"]
+  Map_ID string [note: "地图ID（关联locat表）"]
+  X_coord double [note: "X轴坐标"]
+  Y_coord double [note: "Y轴坐标"]
+  Z_coord double [note: "Z轴坐标"]
+}
+
+// 地图基础信息表（地图类型、版本关联）
+Table locat {
+  Map_ID string [note: "地图ID（主键，关联locatc表）"]
+  Location_Type string [note: "位置类型（大陆/副本/地下城/团本）"]
+  Location_Name string [note: "地图/区域名称（如Eastern Kingdoms）"]
+  Game_Version string [note: "游戏版本（WoW/TBC/WLK/CAT/WoD）"]
+}
+
+// 玩家角色核心表（最大量数据，角色等级/职业/所在区域等）
+Table wowah {
+  char_id string [note: "角色唯一ID（主键）"]
+  level long [note: "角色等级"]
+  race string [note: "角色种族（Orc/Blood Elf等）"]
+  charclass string [note: "角色职业（Rogue/Hunter/Warrior等）"]
+  zone string [note: "角色所在区域（关联zone表Zone_Name）"]
+  guild long [note: "公会ID（-1表示无公会）"]
+  timestamp date [note: "角色数据采集时间"]
+}
+
+// 区域属性表（区域类型/等级要求/阵营控制等）
+Table zone {
+  Zone_Name string [note: "区域名称（主键，关联wowah表zone）"]
+  Continent string [note: "所属大陆（关联locat表Location_Name）"]
+  Area string [note: "所属大区域（如Central Kalimdor）"]
+  Zone string [note: "子区域名称"]
+  Subzone string [note: "次级子区域"]
+  Type string [note: "区域类型（Transit,Battleground,Zone,Arena,Event,Sea,Dungeon,City）"]
+  Size string [note: "区域规模（NA,25,20,15,5,40,10等）"]
+  Controlled string [note: "阵营控制（Horde/Alliance/Contested）"]
+  Min_req_level long [note: "进入最低等级要求"]
+  Min_rec_level long [note: "推荐最低等级"]
+  Max_rec_level long [note: "推荐最高等级"]
+  Min_bot_level long [note: "最低怪物等级"]
+  Max_bot_level long [note: "最高怪物等级"]
+}
+
+// 表关联关系
+Ref: locat.Map_ID > locat_c.Map_ID
+Ref: wowah.zone > zone.Zone_Name 
+Ref: zone.Continent > locat.Location_Name 

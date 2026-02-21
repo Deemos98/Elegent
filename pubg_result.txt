@@ -1,0 +1,102 @@
+===== 开始读取ORC文件 =====
+成功读取文件：stats0
+成功读取文件：kill0
+
+=== 1. 所有ORC文件数据基本信息 ===
+stats0 - 总行数：13849287
+kill0 - 总行数：13426348
+
+=== 2. 所有ORC文件字段结构与数据预览 ===
+
+--------------------------------------------------
+文件名称：stats0
+--------------------------------------------------
+【字段结构（列名+数据类型）】
+root
+ |-- date: timestamp (nullable = true)
+ |-- game_size: long (nullable = true)
+ |-- match_id: string (nullable = true)
+ |-- match_mode: string (nullable = true)
+ |-- party_size: long (nullable = true)
+ |-- player_assists: long (nullable = true)
+ |-- player_dbno: long (nullable = true)
+ |-- player_dist_ride: double (nullable = true)
+ |-- player_dist_walk: double (nullable = true)
+ |-- player_dmg: long (nullable = true)
+ |-- player_kills: long (nullable = true)
+ |-- player_name: string (nullable = true)
+ |-- player_survive_time: double (nullable = true)
+ |-- team_id: string (nullable = true)
+ |-- team_placement: long (nullable = true)
+
+
+【前5行数据】
++-------------------+---------+--------------------+----------+----------+--------------+-----------+------------------+------------------+----------+------------+-----------+-------------------+-------+--------------+
+|               date|game_size|            match_id|match_mode|party_size|player_assists|player_dbno|  player_dist_ride|  player_dist_walk|player_dmg|player_kills|player_name|player_survive_time|team_id|team_placement|
++-------------------+---------+--------------------+----------+----------+--------------+-----------+------------------+------------------+----------+------------+-----------+-------------------+-------+--------------+
+|2017-11-26 20:59:40|       37|2U4GBNA0YmnNZYkzj...|       tpp|         2|             0|          1|          2870.724|        1784.84778|       117|           1|   SnuffIes|            1106.32|      4|            18|
+|2017-11-26 20:59:40|       37|2U4GBNA0YmnNZYkzj...|       tpp|         2|             0|          1|2938.4072300000003|1756.0797100000002|       127|           1|     Ozon3r|           1106.315|      4|            18|
+|2017-11-26 20:59:40|       37|2U4GBNA0YmnNZYkzj...|       tpp|         2|             0|          0|               0.0|        224.157562|        67|           0|     bovize|            235.558|      5|            33|
+|2017-11-26 20:59:40|       37|2U4GBNA0YmnNZYkzj...|       tpp|         2|             0|          0|               0.0|          92.93515|         0|           0|    sbahn87|            197.553|      5|            33|
+|2017-11-26 20:59:40|       37|2U4GBNA0YmnNZYkzj...|       tpp|         2|             0|          0|        2619.07739|          2510.447|       175|           2|  GeminiZZZ|           1537.495|     14|            11|
++-------------------+---------+--------------------+----------+----------+--------------+-----------+------------------+------------------+----------+------------+-----------+-------------------+-------+--------------+
+only showing top 5 rows
+
+
+【后5行数据】
++-------------------+---------+--------------------+----------+----------+--------------+-----------+-----------------+----------------+----------+------------+--------------+-------------------+-------+--------------+
+|               date|game_size|            match_id|match_mode|party_size|player_assists|player_dbno| player_dist_ride|player_dist_walk|player_dmg|player_kills|   player_name|player_survive_time|team_id|team_placement|
++-------------------+---------+--------------------+----------+----------+--------------+-----------+-----------------+----------------+----------+------------+--------------+-------------------+-------+--------------+
+|2018-01-04 04:12:58|       46|2U4GBNA0YmlWc_jEc...|       tpp|         2|             1|          1|              0.0|      107.555237|       187|           0|      YoungPee|            174.608|     20|            39|
+|2018-01-04 04:12:58|       46|2U4GBNA0YmlWc_jEc...|       tpp|         2|             0|          0|592.5624389999999|        571.8593|        51|           0|KnightShade_13|            355.901|     31|            29|
+|2018-01-04 04:12:58|       46|2U4GBNA0YmlWc_jEc...|       tpp|         2|             0|          1|         900.4451|         454.024|        73|           1|   XxXRynumXxX| 355.89599999999996|     31|            29|
+|2018-01-04 04:12:58|       46|2U4GBNA0YmlWc_jEc...|       tpp|         2|             0|          1|              0.0|      36.4534874|        99|           1|   Unknown0311|            128.873|     35|            32|
+|2018-01-04 04:12:58|       46|2U4GBNA0YmlWc_jEc...|       tpp|         2|             0|          1|              0.0|      304.118866|       200|           2|    DoctorHrmm|            299.494|     35|            32|
++-------------------+---------+--------------------+----------+----------+--------------+-----------+-----------------+----------------+----------+------------+--------------+-------------------+-------+--------------+
+
+
+--------------------------------------------------
+文件名称：kill0
+--------------------------------------------------
+【字段结构（列名+数据类型）】
+root
+ |-- killed_by: string (nullable = true)
+ |-- killer_name: string (nullable = true)
+ |-- killer_placement: long (nullable = true)
+ |-- killer_position_x: double (nullable = true)
+ |-- killer_position_y: double (nullable = true)
+ |-- map: string (nullable = true)
+ |-- match_id: string (nullable = true)
+ |-- time: long (nullable = true)
+ |-- victim_name: string (nullable = true)
+ |-- victim_placement: long (nullable = true)
+ |-- victim_position_x: double (nullable = true)
+ |-- victim_position_y: double (nullable = true)
+
+
+【前5行数据】
++------------+----------------+----------------+-----------------+-----------------+-------+--------------------+----+---------------+----------------+-----------------+-----------------+
+|   killed_by|     killer_name|killer_placement|killer_position_x|killer_position_y|    map|            match_id|time|    victim_name|victim_placement|victim_position_x|victim_position_y|
++------------+----------------+----------------+-----------------+-----------------+-------+--------------------+----+---------------+----------------+-----------------+-----------------+
+|     Grenade| KrazyPortuguese|               5|         657725.1|         146275.2|MIRAMAR|2U4GBNA0YmnLSqvEy...| 823|KrazyPortuguese|               5|         657725.1|         146275.2|
+|      SCAR-L|nide2Bxiaojiejie|              31|         93091.37|         722236.4|MIRAMAR|2U4GBNA0YmnLSqvEy...| 194|    X3evolution|              33|         92238.68|         723375.1|
+|        S686|        Ascholes|              43|         366921.4|         421623.9|MIRAMAR|2U4GBNA0YmnLSqvEy...| 103|        CtrlZee|              46|         367304.5|         421216.1|
+|Down and Out|      Weirdo7777|               9|         472014.2|         313274.8|MIRAMAR|2U4GBNA0YmnLSqvEy...|1018|      BlackDpre|              13|         476645.9|         316758.4|
+|        M416|       Solayuki1|               9|         473357.8|         318340.5|MIRAMAR|2U4GBNA0YmnLSqvEy...|1018|          Vjolt|              13|         473588.5|         318418.8|
++------------+----------------+----------------+-----------------+-----------------+-------+--------------------+----+---------------+----------------+-----------------+-----------------+
+only showing top 5 rows
+
+
+【后5行数据】
++------------+-----------+----------------+-----------------+-----------------+-------+--------------------+----+-------------+----------------+-----------------+-----------------+
+|   killed_by|killer_name|killer_placement|killer_position_x|killer_position_y|    map|            match_id|time|  victim_name|victim_placement|victim_position_x|victim_position_y|
++------------+-----------+----------------+-----------------+-----------------+-------+--------------------+----+-------------+----------------+-----------------+-----------------+
+|    Bluezone|       NULL|            NULL|             NULL|             NULL|ERANGEL|2U4GBNA0YmkTZQvSz...|1519|   Carmen_Amy|              28|         165267.3|         601221.8|
+|Down and Out|  Subastral|               9|         298162.8|         501961.7|ERANGEL|2U4GBNA0YmkTZQvSz...|1086|   JimmyChiu_|              28|         299201.8|         504790.9|
+|      SCAR-L|     TingFg|              20|         447251.2|         628701.7|ERANGEL|2U4GBNA0YmkTZQvSz...| 327|     LYB_LaoJ|              19|         447025.3|         628270.8|
+|      SCAR-L|  OldBlack6|               3|         152108.8|         315162.6|ERANGEL|2U4GBNA0YmkTZQvSz...| 624|jaydenhuang07|              11|         152887.4|         315209.8|
+|Down and Out|  liuyang23|              19|         446082.9|         627984.4|ERANGEL|2U4GBNA0YmkTZQvSz...| 344|       TingFg|              20|         447621.9|         628611.0|
++------------+-----------+----------------+-----------------+-----------------+-------+--------------------+----+-------------+----------------+-----------------+-----------------+
+
+
+===== 分析完成，结果已写入：/opt/project/pubg_result.txt =====

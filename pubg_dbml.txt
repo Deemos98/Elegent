@@ -1,0 +1,37 @@
+// 玩家比赛统计表（单场比赛中每个玩家的核心数据）
+Table stats0 {
+  date timestamp [note: "比赛开始时间戳"]
+  game_size long [note: "单场比赛总参与人数"]
+  match_id string [note: "比赛唯一标识ID（关联击杀表）"]
+  match_mode string [note: "游戏模式（如tpp=第三人称视角）"]
+  party_size long [note: "玩家所在队伍的人数"]
+  player_assists long [note: "玩家单场助攻数"]
+  player_dbno long [note: "玩家单场击倒敌人数量（未淘汰）"]
+  player_dist_ride double [note: "玩家单场驾车移动距离"]
+  player_dist_walk double [note: "玩家单场步行移动距离"]
+  player_dmg long [note: "玩家单场造成的总伤害值"]
+  player_kills long [note: "玩家单场淘汰敌人数量"]
+  player_name string [note: "玩家游戏昵称"]
+  player_survive_time double [note: "玩家单场存活时间（秒）"]
+  team_id string [note: "玩家所在队伍唯一标识"]
+  team_placement long [note: "玩家所在队伍的最终排名"]
+}
+
+// 击杀详情表（单场比赛中每一次击杀的具体信息）
+Table kill0 {
+  killed_by string [note: "击杀方式（武器名称/蓝圈Bluezone/击倒淘汰Down and Out）"]
+  killer_name string [note: "击杀者游戏昵称"]
+  killer_placement long [note: "击杀者最终排名"]
+  killer_position_x double [note: "击杀时击杀者的X坐标"]
+  killer_position_y double [note: "击杀时击杀者的Y坐标"]
+  map string [note: "比赛地图名称（如MIRAMAR/ERANGEL）"]
+  match_id string [note: "比赛唯一标识ID（关联统计表）"]
+  time long [note: "击杀发生时的游戏内时间（秒）"]
+  victim_name string [note: "被击杀者游戏昵称"]
+  victim_placement long [note: "被击杀者最终排名"]
+  victim_position_x double [note: "击杀时被击杀者的X坐标"]
+  victim_position_y double [note: "击杀时被击杀者的Y坐标"]
+}
+
+// 表关联关系（1个比赛对应多个玩家数据+多个击杀记录）
+Ref: stats0.match_id > kill0.match_id
